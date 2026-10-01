@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Currículo - Front-End Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+        }
+
+        .curriculo {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 30px auto;
+            padding: 45px 50px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        /* Cabeçalho */
+        .cabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 180px;
+        }
+
+        .informacoes-iniciais {
+            width: 65%;
+        }
+
+        .nome {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .cargo {
+            font-size: 18px;
+            color: #444444;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .dados-pessoais {
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .dados-pessoais strong {
+            font-weight: 700;
+        }
+
+        /* Espaço para foto */
+        .foto {
+            width: 135px;
+            height: 135px;
+            border: 2px solid #111111;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #777777;
+            font-size: 13px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Seções */
+        .secao {
+            margin-top: 30px;
+        }
+
+        .titulo-secao {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #111111;
+        }
+
+        .texto {
+            font-size: 14px;
+            text-align: left;
+        }
+
+        /* Experiência / objetivo */
+        .experiencia {
+            margin-bottom: 22px;
+        }
+
+        .cargo-experiencia {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .empresa {
+            font-size: 14px;
+            font-weight: 600;
+            color: #444444;
+            margin-bottom: 8px;
+        }
+
+        .responsabilidades {
+            padding-left: 18px;
+            font-size: 14px;
+        }
+
+        .responsabilidades li {
+            margin-bottom: 5px;
+        }
+
+        /* Formação */
+        .formacao-item {
+            margin-bottom: 10px;
+        }
+
+        .curso {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .instituicao {
+            font-size: 14px;
+            color: #444444;
+        }
+
+        /* Competências */
+        .competencias {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 30px;
+            font-size: 14px;
+        }
+
+        .competencia::before {
+            content: "•";
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Rodapé */
+        .rodape {
+            margin-top: 35px;
+            padding-top: 12px;
+            border-top: 1px solid #cccccc;
+            font-size: 12px;
+            color: #777777;
+        }
+
+        /* Impressão / PDF */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .curriculo {
+                margin: 0;
+                width: 210mm;
+                min-height: 297mm;
+                box-shadow: none;
+            }
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 800px) {
+            .curriculo {
+                width: 95%;
+                margin: 15px auto;
+                padding: 30px;
+            }
+
+            .cabecalho {
+                gap: 25px;
+            }
+
+            .nome {
+                font-size: 28px;
+            }
+
+            .foto {
+                width: 110px;
+                height: 110px;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .cabecalho {
+                flex-direction: column-reverse;
+            }
+
+            .informacoes-iniciais {
+                width: 100%;
+            }
+
+            .competencias {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="curriculo">
+
+        <!-- CABEÇALHO -->
+        <header class="cabecalho">
+
+            <div class="informacoes-iniciais">
+
+                <h1 class="nome">
+                    Rhiana Vitória Cardoso da Rosa
+                </h1>
+
+                <p class="cargo">
+                    Front-End Developer
+                </p>
+
+                <div class="dados-pessoais">
+
+                    <p>
+                        <strong>E-mail:</strong>
+                        meuemail@gmail.com
+                    </p>
+
+                    <p>
+                        <strong>Telefone:</strong>
+                        (XX) XXXXX-XXXX
+                    </p>
+
+                    <p>
+                        <strong>Idade:</strong>
+                        19 anos
+                    </p>
+
+                    <p>
+                        <strong>Localização:</strong>
+                        Palhoça - SC
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!--
+                ESPAÇO PARA SUA FOTO
+
+                Para colocar uma imagem, substitua o conteúdo
+                pelo seguinte:
+
+                <img src="minha-foto.jpg" alt="Foto de perfil">
+
+            -->
+            <div class="foto">
+                <img src="https://cdn.pixabay.com/photo/2017/06/13/12/53/profile-2398782_640.png" alt="Foto de perfil">
+            </div>
+
+        </header>
+
+
+        <!-- OBJETIVO PROFISSIONAL -->
+        <section class="secao">
+
+            <h2 class="titulo-secao">
+                Objetivo Profissional
+            </h2>
+
+            <p class="texto">
+                Busco uma oportunidade profissional na área de programação,
+                com foco em desenvolvimento Front-End. Tenho interesse em
+                participar de projetos que permitam aplicar e aprimorar meus
+                conhecimentos em desenvolvimento web, criação de interfaces
+                modernas, responsivas e acessíveis, além de contribuir para
+                o desenvolvimento de soluções eficientes e de qualidade.
+            </p>
+
+        </section>
+
+
+        <!-- EXPERIÊNCIA / CARGO DE INTERESSE -->
+        <section class="secao">
+
+            <h2 class="titulo-secao">
+                Área de Interesse
+            </h2>
+
+            <div class="experiencia">
+
+                <h3 class="cargo-experiencia">
+                    Front-End Developer
+                </h3>
+
+                <p class="empresa">
+                    Empresa de Tecnologia
+                </p>
+
+                <ul class="responsabilidades">
+
+                    <li>
+                        Desenvolvimento e manutenção de interfaces web
+                        utilizando HTML, CSS e JavaScript.
+                    </li>
+
+                    <li>
+                        Criação de páginas responsivas para diferentes
+                        dispositivos e tamanhos de tela.
+                    </li>
+
+                    <li>
+                        Implementação de interfaces modernas com foco
+                        em usabilidade e experiência do usuário.
+                    </li>
+
+                    <li>
+                        Integração de interfaces com APIs e serviços
+                        de back-end.
+                    </li>
+
+                    <li>
+                        Identificação e correção de problemas de
+                        interface e desempenho.
+                    </li>
+
+                    <li>
+                        Colaboração com equipes de desenvolvimento,
+                        design e produto.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMAÇÃO ACADÊMICA -->
+        <section class="secao">
+
+            <h2 class="titulo-secao">
+                Formação Acadêmica
+            </h2>
+
+            <div class="formacao-item">
+
+                <p class="curso">
+                    Análise e Desenvolvimento de Sistemas (ADS)
+                </p>
+
+                <p class="instituicao">
+                    Faculdade Municipal de Palhoça
+                </p>
+
+                <p class="instituicao">
+                    Cursando — Conclusão prevista: 20XX
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+        <section class="secao">
+
+            <h2 class="titulo-secao">
+                Conhecimentos e Habilidades
+            </h2>
+
+            <div class="competencias">
+
+                <div class="competencia">
+                    HTML5
+                </div>
+
+                <div class="competencia">
+                    CSS3
+                </div>
+
+                <div class="competencia">
+                    JavaScript
+                </div>
+
+                <div class="competencia">
+                    Desenvolvimento Responsivo
+                </div>
+
+                <div class="competencia">
+                    Git e GitHub
+                </div>
+
+                <div class="competencia">
+                    APIs REST
+                </div>
+
+                <div class="competencia">
+                    UI/UX
+                </div>
+
+                <div class="competencia">
+                    Lógica de Programação
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ -->
+        <footer class="rodape">
+            Currículo profissional — Front-End Developer
+        </footer>
+
+    </main>
+
+</body>
+</html>
